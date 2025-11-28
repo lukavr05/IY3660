@@ -91,4 +91,10 @@ $H prime$ is still pre-image resistant, as it inherits the property from $H$, an
 
 #list(
   [$H(m_1)$ and $H(m_2)$ will produce different results (as the function treats them as two different funcitons)],
+  [However, $H prime(m_1)$ and $H prime(m_2)$ produce the same result as $H prime$ treats $m_2$ as the same string, removing the leading $1$]
 )
+
+This means that while $H prime$ is pre-image resistant, it is not second pre-image resistant as we have $m_1 != m_2$ such that $H prime(m_1) = H prime(m_2)$
+
+= Question 2
+
