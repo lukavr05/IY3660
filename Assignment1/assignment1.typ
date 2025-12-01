@@ -76,12 +76,18 @@
 = Question 1
 
 *a)*
+#figure(
+  image("media/Blank diagram.png", width: 80%),
+  caption: [*Pre-image Resistance*: It must be computationally infeasible given an output of a hash function $y$ to find an input $m$ that provides $y$.],
+)
 
-*b)*
+#figure(
+  image("media/Blank diagram2.png", width: 80%),
+  caption: [*Second Pre-image Resistance*: There can be no distinct $m_1$ and $m_2$ such that $H(m_1) = y$ and $H(m_2) = y$.],
+)
 
-Pre-image resistance is the property of a hash function $H$ such that it is computationally infeasible to find (given $y$), a string $m in {0,1}^*$ to produce $H(m) = y$. 
 
-Suppose we have a hash function $H: {0,1}^* arrow {0,1}^n$ that is pre-image resistant. If we constuct another hash function $H prime$ such that: $H prime : {0,1}^* arrow {0,1}^n$ (the same as $H$). If we modify $H prime$ so that: 
+*b)* Suppose we have a hash function $H: {0,1}^* arrow {0,1}^n$ that is pre-image resistant. If we constuct another hash function $H prime$ such that: $H prime : {0,1}^* arrow {0,1}^n$ (the same as $H$). However, if we modify $H prime$ so that: 
 #list(
 [if the first (or only) bit in $m$ is $1$, ignore it and process the rest of the string], 
 [if not, process the string normally]
@@ -90,7 +96,7 @@ Suppose we have a hash function $H: {0,1}^* arrow {0,1}^n$ that is pre-image res
 $H prime$ is still pre-image resistant, as it inherits the property from $H$, and inputting any $m$ into both functions will be computationally infeasible to reverse and gain $y$. However, for $H prime$, if we have $m_1 = 1$ and $m_2 = 11$:
 
 #list(
-  [$H(m_1)$ and $H(m_2)$ will produce different results (as the function treats them as two different funcitons)],
+  [$H(m_1)$ and $H(m_2)$ will produce different results (as the function treats them as two different inputs)],
   [However, $H prime(m_1)$ and $H prime(m_2)$ produce the same result as $H prime$ treats $m_2$ as the same string, removing the leading $1$]
 )
 
